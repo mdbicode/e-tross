@@ -7,6 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="create"><button>MAU CUSTOM</button></a>
+    <form action="">
+    @csrf
+
+    <h1>Hasil prototype</h1>
+    <img src="" alt="">
+    
+    <h1>Masukkan jumlah pesanan</h1>
+    <input type="text">
+    <input type="submit">
+    </form>
+
 </body>
 </html>

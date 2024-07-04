@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Order;
-use Session;
+use DateTime;
 use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
@@ -14,7 +14,7 @@ class ProductController extends Controller
     function index()
     {
         $data = Product::all();
-
+        
         return view('product',['products'=>$data]);
     }
     function detail($id)
@@ -39,12 +39,12 @@ class ProductController extends Controller
     }
     static function cartItem()
     {
-        $userId=Session::get('user')['id'];
+        $userId=session()->get('user')['id'];
         return Cart::where('user_id',$userId)->count();
     }
     function cartList()
     {
-        $userId = Session::get('user')['id'];
+        $userId = session()->get('user')['id'];
         $products = DB::table('cart') 
         ->join('products','cart.product_id','=','products.id')
         ->where('cart.user_id',$userId)
@@ -60,7 +60,7 @@ class ProductController extends Controller
     }
     function orderNow()
     {
-        $userId = Session::get('user')['id'];
+        $userId = session()->get('user')['id'];
        $total = $products = DB::table('cart') 
         ->join('products','cart.product_id','=','products.id')
         ->where('cart.user_id',$userId)
@@ -70,11 +70,12 @@ class ProductController extends Controller
     }
     function orderPlace(Request $req)
     {
-        $userId = Session::get('user')['id'];
+        $userId = session()->get('user')['id'];
         $allCart =  Cart::where('user_id',$userId)->get();
         foreach($allCart as $cart)
         {
             $order = new Order;
+            $order->order_id = uniqid('dmy');
             $order->product_id=$cart['product_id'];
             $order->user_id=$cart['user_id'];
             $order->status="pending";
@@ -90,7 +91,7 @@ class ProductController extends Controller
     }
     function myOrders()
     {
-        $userId = Session::get('user')['id'];
+        $userId = session()->get('user')['id'];
         $orders = DB::table('orders') 
          ->join('products','orders.product_id','=','products.id')
          ->where('orders.user_id',$userId)

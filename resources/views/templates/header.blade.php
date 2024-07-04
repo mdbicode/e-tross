@@ -17,14 +17,15 @@ if(Session::has('user'))
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand"  href="/" style="color: rgb(235, 45, 108); font-weight: bold; font-family: cursive;">SWEETY</a>
+      <a class="navbar-brand"  href="/" style="color: rgb(235, 45, 108); font-weight: bold; font-family: cursive;">E- TROSO</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav ">
-        <li class="active"><a href="#" style="color: white;" class="home">Home</a></li>
-        <li class="nav-item"><a href="/myorders" style="color: white;">Orders</a></li>
+        <li class="active"><a href="/" style="color: white;" class="home">Home</a></li>
+        <li class="nav-item"><a href="/" style="color: white;">Kain</a></li>
+        <li class="nav-item"><a href="/" style="color: white;">Atasan</a></li>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
@@ -33,12 +34,13 @@ if(Session::has('user'))
         <button type="submit" class="btn btn-default">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/cartlist"style="color: white;">Cart({{$total}})</a></li>
         @if(Session::has('user'))
         <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white;">{{Session::get('user')['name']}}
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
+          <li class="nav-item"><a href="/cartlist" style="color: black;">Cart</a></li>
+          <li class="nav-item"><a href="/myorders" style="color: black;">Orders</a></li>
           <li><a href="/logout" style="color: black;">Logout</a></li>
           
         </ul>

@@ -1,10 +1,10 @@
-@extends('master')
+@extends('templates.master')
 @section('content')
 <div class="container" style="height: 650px;">
     <div class="row">
         
         <div class="col-sm-6">
-            <img class="detail-img" src="{{$product['gallery']}}" alt="">
+            <img class="detail-img" src="/{{$product['gallery']}}" alt="">
             <!-- <img src="{{asset('img')}}/{{$product->gallery}}" alt=""> -->
         </div>
         <div class="col-sm-6">

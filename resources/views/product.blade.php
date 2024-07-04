@@ -1,4 +1,4 @@
-@extends('master')
+@extends('templates.master')
 @section('content')
 <div class="custom-product">
 <div id="myCarousel" class="carousel slide" data-ride="carousel" >

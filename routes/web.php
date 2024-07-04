@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\CustomProductController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +44,28 @@ Route::get("myorders",[ProductController::class,'myOrders']);
 // Custom
 Route::prefix("custom")->group(function(){
     Route::get("/",[CustomProductController::class,'index']);
-    Route::get("/create",[CustomProductController::class,'create']);
+    Route::get("/create/kain",[CustomProductController::class,'kain']);
+    Route::post("/create/kain",[CustomProductController::class,'post_kain']);
+    Route::get("/create/lengan",[CustomProductController::class,'lengan']);
+    Route::post("/create/lengan",[CustomProductController::class,'post_lengan']);
+    Route::get("/create/model",[CustomProductController::class,'model']);
+    Route::post("/create/model",[CustomProductController::class,'post_model']);
+    Route::get("/create/penerapan-kain",[CustomProductController::class,'penerapan_kain']);
+    Route::post("/create/penerapan-kain",[CustomProductController::class,'post_penerapan_kain']);
+    Route::get("/result",[CustomProductController::class,'result']);
+});
+
+// Custom
+Route::prefix("dashboard")->group(function(){
+    Route::get("/",[DashboardController::class,'index']);
+    Route::get("/product",[DashboardController::class,'product']);
+    Route::get("/product/create",[DashboardController::class,'createProduct']);
+    Route::post("/product/create",[DashboardController::class,'storeProduct']);
+    Route::get('/product/edit/{id}', [DashboardController::class,'editProduct'])->name('product.edit');
+    Route::put('/product/edit/{id}', [DashboardController::class,'updateProduct'])->name('product.update');
+    Route::delete('/product/delete/{id}', [DashboardController::class,'deleteProduct'])->name('product.delete');
+
+    Route::get("/order",[DashboardController::class,'order']);
 });
 
 

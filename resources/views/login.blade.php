@@ -1,5 +1,5 @@
 
-@extends('master')
+@extends('templates.master')
 @section('content')
 <div class="container custom-login">
     <div class="row">

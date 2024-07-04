@@ -9,4 +9,11 @@ class Order extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    public $table = 'orders';
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

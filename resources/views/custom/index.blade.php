@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="create"><button>MAU CUSTOM</button></a>
+    <a href="/custom/create/kain"><button>MAU CUSTOM</button></a>
 </body>
 </html>
