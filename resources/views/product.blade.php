@@ -1,63 +1,144 @@
 @extends('templates.master')
 @section('content')
-<div class="custom-product">
-<div id="myCarousel" class="carousel slide" data-ride="carousel" >
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    @foreach($products as $items)
-    <div class="item {{$items['id']==1?'active':''}}">
-      <a href="detail/{{$items['id']}}">
-        <img src="{{$items['gallery']}}" class="slider-img">
-        <div class="carousel-caption slider-text">
-        <h3 style="text-align: center;">{{$items['name']}}</h3>
-        <p style="text-align: center;">{{$items['description']}}</p>
-        </div>
-      </a>
-    </div>
-    @endforeach
-    
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" style="opacity: 0.3 ;" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" style="opacity: 0.3 ;" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-<div class="trending-wrapper">
-  <h3 style="font-family: 'Times New Roman', Times, serif;">Trending Products</h3>  
-  @foreach($products as $items)
-  <div class="trending-item">
-    <a href="detail/{{$items['id']}}">
-    <img src="{{$items['gallery']}}" class="trending-image">
-    <div class="">
-    <h4 style="color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: normal;">{{$items['name']}}</h4>
-    <!-- <h4 style="color: palevioletred; font-weight: bold;">Rs.</h4> -->
-    <h4 style="color: palevioletred; font-weight: bold;">Rs. {{$items['price']}}</h4>
-    
-    </div>
-    <br> <br> <br> <br>
-</a>
-  </div>
- 
-  @endforeach
-
-  
-</div>
-
-</div>
-</div>
-
+          <!-- inner page section -->
+          <section class="inner_page_head">
+            <div class="container_fuild">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="full">
+                        <h3>Product Grid</h3>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- end inner page section -->
+         <!-- product section -->
+         <section class="product_section layout_padding">
+            <div class="container">
+               <div class="heading_container heading_center">
+                  <h2>
+                     Our <span>products</span>
+                  </h2>
+               </div>
+              
+                <div class="row">
+                  @foreach ($products as $item)
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                     
+                    <div class="box">
+                        <div class="option_container">
+                            <div class="options">
+                                <a href="" class="option1">
+                                Add to Chart
+                                </a>
+                                <a href="" class="option2">
+                                Buy Now
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="img-box">
+                            <img src="{{ $item->gallery }}" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                {{ $item->name }}
+                            </h5>
+                            <h6>
+                                {{ $item->price }}
+                            </h6>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  @endforeach
+                </div>
+               
+               
+               <div class="btn-box">
+                  <a href="">
+                  View All products
+                  </a>
+               </div>
+            </div>
+         </section>
+         <!-- end product section -->
+         <!-- footer section -->
+         <footer class="footer_section">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-4 footer-col">
+                     <div class="footer_contact">
+                        <h4>
+                           Reach at..
+                        </h4>
+                        <div class="contact_link_box">
+                           <a href="">
+                           <i class="fa fa-map-marker" aria-hidden="true"></i>
+                           <span>
+                           Location
+                           </span>
+                           </a>
+                           <a href="">
+                           <i class="fa fa-phone" aria-hidden="true"></i>
+                           <span>
+                           Call +01 1234567890
+                           </span>
+                           </a>
+                           <a href="">
+                           <i class="fa fa-envelope" aria-hidden="true"></i>
+                           <span>
+                           demo@gmail.com
+                           </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4 footer-col">
+                     <div class="footer_detail">
+                        <a href="index.html" class="footer-logo">
+                        Famms
+                        </a>
+                        <p>
+                           Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+                        </p>
+                        <div class="footer_social">
+                           <a href="">
+                           <i class="fa fa-facebook" aria-hidden="true"></i>
+                           </a>
+                           <a href="">
+                           <i class="fa fa-twitter" aria-hidden="true"></i>
+                           </a>
+                           <a href="">
+                           <i class="fa fa-linkedin" aria-hidden="true"></i>
+                           </a>
+                           <a href="">
+                           <i class="fa fa-instagram" aria-hidden="true"></i>
+                           </a>
+                           <a href="">
+                           <i class="fa fa-pinterest" aria-hidden="true"></i>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4 footer-col">
+                     <div class="map_container">
+                        <div class="map">
+                           <div id="googleMap"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="footer-info">
+                  <div class="col-lg-7 mx-auto px-0">
+                     <p>
+                        &copy; <span id="displayYear"></span> All Rights Reserved By
+                        <a href="https://html.design/">Free Html Templates</a>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </footer>
+         <!-- footer section -->
 @endsection
