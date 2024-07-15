@@ -379,8 +379,8 @@
          </h2>
       </div>
       <div class="row">
+         @foreach ($products as $item)
          <div class="col-sm-6 col-md-4 col-lg-4">
-            @foreach ($products as $item)
             
             <div class="box">
                <div class="option_container">

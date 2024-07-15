@@ -119,12 +119,7 @@ class CustomProductController extends Controller
         return view('custom.result', compact('custom_result'));
     }
     
-    public function detail($id)
-    {
-        $custom = Custom::find($id)->get();
-
-        return view('dahsboard.detail', compact('custom'));
-    }
+   
     
     public function post_result(Request $request)
     {

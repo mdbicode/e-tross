@@ -14,7 +14,7 @@
     </section>
 
     <section class="product_section layout_padding">
-    <form action="/custom/create/lengan" method="POST">
+    <form action="/custom/create/lenga2n" method="POST">
         <div class="row">
         
         @csrf

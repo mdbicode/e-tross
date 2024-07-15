@@ -35,7 +35,7 @@
             <label for="panjang_lengan">Panjang Lengan:</label>
             <input type="text" class="form-control" id="panjang_lengan" name="panjang_lengan" required>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Selanjutnya</button>
     </form>
 </div>
 </section>
