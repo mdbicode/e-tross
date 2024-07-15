@@ -44,7 +44,7 @@
                         </div>
                         
                         <div class="img-box">
-                            <img src="{{ $item->gallery }}" alt="">
+                            <img src="/{{ $item->gallery }}" alt="">
                         </div>
                         <div class="detail-box">
                             <h5>

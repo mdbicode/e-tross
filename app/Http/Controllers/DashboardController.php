@@ -89,4 +89,11 @@ class DashboardController extends Controller
         $customs = Custom::latest()->get();
         return view('dashboard.custom',compact('customs'));
     }
+
+    public function detail($id)
+    {
+        $custom = Custom::find($id);
+
+        return view('dashboard.detail', compact('custom'));
+    }
 }

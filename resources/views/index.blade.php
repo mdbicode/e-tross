@@ -385,12 +385,14 @@
             <div class="box">
                <div class="option_container">
                   <div class="options">
-                     <a href="" class="option1">
-                     Men's Shirt
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
+                     <form action="/add_to_cart" method="POST">
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{$item['id']}}">
+                        <button style="transition: all .3s; padding: 8px 15px; border-radius: 30px; width: 165px; text-align: center; margin: 5px 0;"  class="option1">
+                           Add to Cart
+                         </button>
+                         
+                    </form>
                   </div>
                </div>
                <div class="img-box">
@@ -456,19 +458,19 @@
                   <div class="img_container">
                      <div class="img-box">
                         <div class="img_box-inner">
-                           <img src="/img/client.jpg" alt="">
+                           <img src="/img/client1.jpeg" alt="">
                         </div>
                      </div>
                   </div>
                   <div class="detail-box">
                      <h5>
-                        Anna Trevor
+                        Johar
                      </h5>
                      <h6>
                         Customer
                      </h6>
                      <p>
-                        Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                        Aku suka desain kain disini.
                      </p>
                   </div>
                </div>
@@ -478,41 +480,19 @@
                   <div class="img_container">
                      <div class="img-box">
                         <div class="img_box-inner">
-                           <img src="/img/client.jpg" alt="">
+                           <img src="/img/client2.jpeg" alt="">
                         </div>
                      </div>
                   </div>
                   <div class="detail-box">
                      <h5>
-                        Anna Trevor
+                        Habib Awwaluddin
                      </h5>
                      <h6>
                         Customer
                      </h6>
                      <p>
-                        Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
-                     </p>
-                  </div>
-               </div>
-            </div>
-            <div class="carousel-item">
-               <div class="box col-lg-10 mx-auto">
-                  <div class="img_container">
-                     <div class="img-box">
-                        <div class="img_box-inner">
-                           <img src="/img/client.jpg" alt="">
-                        </div>
-                     </div>
-                  </div>
-                  <div class="detail-box">
-                     <h5>
-                        Anna Trevor
-                     </h5>
-                     <h6>
-                        Customer
-                     </h6>
-                     <p>
-                        Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                        Sangat mantap sekali kain sangat bagus.
                      </p>
                   </div>
                </div>

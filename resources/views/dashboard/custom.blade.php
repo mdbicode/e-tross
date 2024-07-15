@@ -23,10 +23,10 @@
                     <tbody>
                         @foreach ($customs as $item)
                         <tr>
-                            <td>{{ $item->order_id }}</td>
-                            <td>{{ $item->product->name }}</td>
+                            <td>{{ $item->id }}</td>
+                            <td><a href="/dashboard/custom/{{ $item->id }}">Detail</a></td>
                             <td>{{ $item->user_id }}</td>
-                            <td>{{ $item->address }}</td>
+                            <td>{{ $item->alamat }}</td>
                             <td>{{ $item->payment_method }}</td>
                             <td>{{ $item->payment_status }}</td>
                             <td>{{ $item->status }}</td>

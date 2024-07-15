@@ -60,7 +60,10 @@ Route::prefix("custom")->group(function(){
     Route::post("/create/model",[CustomProductController::class,'post_model']);
     Route::get("/create/penerapan-kain",[CustomProductController::class,'penerapan_kain']);
     Route::post("/create/penerapan-kain",[CustomProductController::class,'post_penerapan_kain']);
-    Route::get("/result",[CustomProductController::class,'result']);
+    Route::get("/create/size",[CustomProductController::class,'size']);
+    Route::post("/create/size",[CustomProductController::class,'post_size']);
+    Route::get("/create/result",[CustomProductController::class,'result']);
+    Route::post("/create/result",[CustomProductController::class,'post_result']);
 });
 
 // Dashboard
@@ -72,7 +75,7 @@ Route::prefix("dashboard")->group(function(){
     Route::get('/product/edit/{id}', [DashboardController::class,'editProduct'])->name('product.edit');
     Route::put('/product/edit/{id}', [DashboardController::class,'updateProduct'])->name('product.update');
     Route::delete('/product/delete/{id}', [DashboardController::class,'deleteProduct'])->name('product.delete');
-
+    Route::get("/custom/{id}",[DashboardController::class,'detail']);
     Route::get("/order",[DashboardController::class,'order']);
     Route::get("/custom",[DashboardController::class,'custom']);
 });

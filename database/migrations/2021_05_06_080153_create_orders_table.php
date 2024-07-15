@@ -13,6 +13,7 @@ class CreateOrdersTable extends Migration
             $table->string('order_id')->unique();
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->integer('jumlah')->default(1);
             $table->string('status')->default('pending');
             $table->string('payment_method')->nullable();
             $table->string('payment_status')->default('unpaid');

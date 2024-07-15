@@ -21,9 +21,8 @@
                     <div class="form-group">
                         <label for="category">Category:</label>
                         <select class="form-control" name="category" id="category">
-                            <option value="baju">Baju</option>
-                            <option value="celana">Celana</option>
                             <option value="kain">Kain</option>
+                            <option value="pakaian">Pakaian</option>
                         </select>
                     </div>
 
