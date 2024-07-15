@@ -3,7 +3,7 @@
     <!-- slider section -->
     <section class="slider_section ">
       <div class="slider_bg_box">
-         <img src="images/slider-bg.jpg" alt="">
+         <img src="/img/slider1.jpg" alt="">
       </div>
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
          <div class="carousel-inner">
@@ -14,16 +14,16 @@
                         <div class="detail-box">
                            <h1>
                               <span>
-                              Sale 20% Off
+                              Elegansi dan 
                               </span>
                               <br>
-                              On Everything
+                              Kualitas Terbaik
                            </h1>
                            <p>
-                              Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                              Temukan keindahan kain Troso yang memesona dengan detail dan kehalusan yang istimewa. Dibuat dengan teknik tradisional yang terjaga kualitasnya, kain Troso merupakan pilihan sempurna untuk gaya Anda yang elegan dan berkelas.
                            </p>
                            <div class="btn-box">
-                              <a href="" class="btn1">
+                              <a href="/clothes" class="btn1">
                               Shop Now
                               </a>
                            </div>
@@ -39,16 +39,16 @@
                         <div class="detail-box">
                            <h1>
                               <span>
-                              Sale 20% Off
+                              Keindahan  
                               </span>
                               <br>
-                              On Everything
+                              Serat Kain Troso
                            </h1>
                            <p>
-                              Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                              Setiap helai kain Troso tidak sekadar tekstil, melainkan warisan budaya yang memukau. Ditenun dengan teliti oleh pengrajin berpengalaman, menghadirkan seni dan keindahan tradisional Indonesia yang tak tergantikan.
                            </p>
                            <div class="btn-box">
-                              <a href="" class="btn1">
+                              <a href="/products" class="btn1">
                               Shop Now
                               </a>
                            </div>
@@ -64,16 +64,16 @@
                         <div class="detail-box">
                            <h1>
                               <span>
-                              Sale 20% Off
+                              Kenali 
                               </span>
                               <br>
-                              On Everything
+                              Kain Troso
                            </h1>
                            <p>
-                              Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                              Dengan motif elegan dan tekstur lembut, kain Troso tak hanya memikat tetapi juga nyaman dipakai. Tersedia dalam berbagai warna dan desain menawan, kain Troso siap untuk memenuhi gaya Anda dalam berbagai kesempatan istimewa.
                            </p>
                            <div class="btn-box">
-                              <a href="" class="btn1">
+                              <a href="/products" class="btn1">
                               Shop Now
                               </a>
                            </div>
@@ -194,10 +194,10 @@
                </div>
                <div class="detail-box">
                   <h5>
-                     Fast Delivery
+                     Pengiriman Cepat
                   </h5>
                   <p>
-                     variations of passages of Lorem Ipsum available
+                     Nikmati pengiriman cepat untuk memenuhi kebutuhan Anda tanpa menunggu lama
                   </p>
                </div>
             </div>
@@ -309,10 +309,10 @@
                </div>
                <div class="detail-box">
                   <h5>
-                     Free Shiping
+                     Gratis Ongkos Kirim
                   </h5>
                   <p>
-                     variations of passages of Lorem Ipsum available
+                     Dapatkan pengiriman gratis untuk pesanan Anda, tanpa biaya tambahan
                   </p>
                </div>
             </div>
@@ -330,10 +330,10 @@
                </div>
                <div class="detail-box">
                   <h5>
-                     Best Quality
+                     Kualitas Terbaik
                   </h5>
                   <p>
-                     variations of passages of Lorem Ipsum available
+                     Kami menyediakan produk dengan kualitas terbaik untuk kepuasan Anda
                   </p>
                </div>
             </div>
@@ -348,17 +348,17 @@
    <div class="container">
       <div class="box">
          <div class="arrival_bg_box">
-            <img src="images/arrival-bg.png" alt="">
+            <img src="/img/slider2.png" alt="">
          </div>
          <div class="row">
             <div class="col-md-6 ml-auto">
                <div class="heading_container remove_line_bt">
                   <h2>
-                     #NewArrivals
+                     Fashion
                   </h2>
                </div>
                <p style="margin-top: 20px;margin-bottom: 30px;">
-                  Vitae fugiat laboriosam officia perferendis provident aliquid voluptatibus dolorem, fugit ullam sit earum id eaque nisi hic? Tenetur commodi, nisi rem vel, ea eaque ab ipsa, autem similique ex unde!
+                  Sentuhan keanggunan klasik Jepara dalam pakaian fashion modern. Kelembutan tenun dan motif tradisional yang elegan, menciptakan gaya yang timeless dan unik. Ideal untuk mereka yang menghargai keindahan budaya dan kualitas tinggi dalam setiap detail.
                </p>
                <a href="">
                Shop Now
@@ -380,6 +380,8 @@
       </div>
       <div class="row">
          <div class="col-sm-6 col-md-4 col-lg-4">
+            @foreach ($products as $item)
+            
             <div class="box">
                <div class="option_container">
                   <div class="options">
@@ -392,296 +394,22 @@
                   </div>
                </div>
                <div class="img-box">
-                  <img src="images/p1.png" alt="">
+                  <img src="{{ $item->gallery }}" alt="">
                </div>
                <div class="detail-box">
                   <h5>
-                     Men's Shirt
+                     {{ $item->name }}
                   </h5>
                   <h6>
-                     $75
+                     {{ $item->price }}
                   </h6>
                </div>
             </div>
          </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p2.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Men's Shirt
-                  </h5>
-                  <h6>
-                     $80
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p3.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $68
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p4.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $70
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p5.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $75
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p6.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $58
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p7.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $80
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p8.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Men's Shirt
-                  </h5>
-                  <h6>
-                     $65
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p9.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Men's Shirt
-                  </h5>
-                  <h6>
-                     $65
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p10.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Men's Shirt
-                  </h5>
-                  <h6>
-                     $65
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p11.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Men's Shirt
-                  </h5>
-                  <h6>
-                     $65
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p12.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $65
-                  </h6>
-               </div>
-            </div>
-         </div>
+         @endforeach
       </div>
       <div class="btn-box">
-         <a href="">
+         <a href="/products">
          View All products
          </a>
       </div>
@@ -728,7 +456,7 @@
                   <div class="img_container">
                      <div class="img-box">
                         <div class="img_box-inner">
-                           <img src="images/client.jpg" alt="">
+                           <img src="/img/client.jpg" alt="">
                         </div>
                      </div>
                   </div>
@@ -750,7 +478,7 @@
                   <div class="img_container">
                      <div class="img-box">
                         <div class="img_box-inner">
-                           <img src="images/client.jpg" alt="">
+                           <img src="/img/client.jpg" alt="">
                         </div>
                      </div>
                   </div>
@@ -772,7 +500,7 @@
                   <div class="img_container">
                      <div class="img-box">
                         <div class="img_box-inner">
-                           <img src="images/client.jpg" alt="">
+                           <img src="/img/client.jpg" alt="">
                         </div>
                      </div>
                   </div>

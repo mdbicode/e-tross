@@ -15,8 +15,27 @@ class ProductController extends Controller
     {
         $data = Product::all();
         
-        return view('product',['products'=>$data]);
+        return view('index',['products'=>$data]);
     }
+    function product()
+    {
+        
+        
+        
+    }
+    public function kain()
+    {
+        $title = "Kain";
+        $data = Product::where('category','kain')->get();
+        return view('product',['products'=>$data,'title'=>$title]);
+    }
+    public function pakaian()
+    {
+        $title = "Pakaian";
+        $data = Product::where('category','pakaian')->get();
+        return view('product',['products'=>$data,'title'=>$title]);
+    }
+
     function detail($id)
     {
         $data = Product::find($id);
@@ -30,7 +49,7 @@ class ProductController extends Controller
             $cart->user_id=$req->session()->get('user')['id'];
             $cart->product_id=$req->product_id;
             $cart->save();
-            return redirect('/');
+            return redirect()->back();
         }
         else
         {
@@ -51,7 +70,13 @@ class ProductController extends Controller
         ->select('products.*','cart.id as cart_id')
         ->get();
 
-        return view('cartlist',['products'=>$products]);
+        $total = 0;
+        
+        foreach($products as $product){
+            $total += $product->price;
+        }
+
+        return view('cartlist',['products'=>$products,'total'=>$total]);
     }
     function removeCart($id)
     {
@@ -61,7 +86,7 @@ class ProductController extends Controller
     function orderNow()
     {
         $userId = session()->get('user')['id'];
-       $total = $products = DB::table('cart') 
+        $total = DB::table('cart') 
         ->join('products','cart.product_id','=','products.id')
         ->where('cart.user_id',$userId)
         ->sum('products.price');
@@ -75,7 +100,7 @@ class ProductController extends Controller
         foreach($allCart as $cart)
         {
             $order = new Order;
-            $order->order_id = uniqid('dmy');
+            $order->order_id = uniqid();
             $order->product_id=$cart['product_id'];
             $order->user_id=$cart['user_id'];
             $order->status="pending";

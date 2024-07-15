@@ -1,5 +1,17 @@
 @extends('templates.master')
 @section('content')
+<section class="inner_page_head">
+  <div class="container_fuild">
+     <div class="row">
+        <div class="col-md-12">
+           <div class="full">
+              <h3>Register</h3>
+           </div>
+        </div>
+     </div>
+  </div>
+</section>
+<section class="product_section layout_padding">
 <div class="container custom-login">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
@@ -20,6 +32,7 @@
                 <button type="submit" class="btn btn-primary">Register</button>
               </form>
         </div>
-    </div>  
-</div>
+    </div>
+  </div>
+</section>  
 @endsection

@@ -32,10 +32,10 @@
               <div class="col-md-4 footer-col">
                  <div class="footer_detail">
                     <a href="index.html" class="footer-logo">
-                    Famms
+                    E-Tross
                     </a>
                     <p>
-                       Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+                     Selamat datang di E-Tross, sumber utama kain Troso berkualitas tinggi. Temukan koleksi eksklusif kami, nikmati pengalaman belanja online yang mudah dan aman, serta jaminan kepuasan pelanggan.
                     </p>
                     <div class="footer_social">
                        <a href="">
@@ -62,14 +62,6 @@
                        <div id="googleMap"></div>
                     </div>
                  </div>
-              </div>
-           </div>
-           <div class="footer-info">
-              <div class="col-lg-7 mx-auto px-0">
-                 <p>
-                    &copy; <span id="displayYear"></span> All Rights Reserved By
-                    <a href="https://html.design/">Free Html Templates</a>
-                 </p>
               </div>
            </div>
         </div>

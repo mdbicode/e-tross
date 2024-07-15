@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -38,5 +39,14 @@ class UserController extends Controller
         $user->save();
 
         return redirect('/login');
+    }
+    function profile()
+    {
+        $userId = session()->get('user')['id'];
+        $orders = DB::table('orders') 
+         ->join('products','orders.product_id','=','products.id')
+         ->where('orders.user_id',$userId)
+         ->get();
+        return view('profile',['orders'=>$orders]);
     }
 }

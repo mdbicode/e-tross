@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Custom;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -83,5 +84,9 @@ class DashboardController extends Controller
     public function order() {
         $order = Order::latest()->get();
         return view('dashboard.order',compact('order'));
+    }
+    public function custom() {
+        $customs = Custom::latest()->get();
+        return view('dashboard.custom',compact('customs'));
     }
 }

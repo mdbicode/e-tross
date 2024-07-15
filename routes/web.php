@@ -19,9 +19,11 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::view('/register','register');
+Route::view("/login",'login');
+Route::post("/login",[UserController::class,'login']);
+Route::post("/register",[UserController::class,'register']);
+Route::get("/profile",[UserController::class,'profile']);
 
 Route::get('/logout', function () {
     Session::forget('user');
@@ -32,14 +34,11 @@ Route::get("/about",function(){
     return view('about');
 });
 
-Route::get("/",function(){
-    return view('index');
-});
 
-Route::view('/register','register');
-Route::post("/login",[UserController::class,'login']);
-Route::post("/register",[UserController::class,'register']);
-Route::get("/product",[ProductController::class,'index']);
+// UI 
+Route::get("/",[ProductController::class,'index']);
+Route::get("/cloth",[ProductController::class,'kain']);
+Route::get("/clothes",[ProductController::class,'pakaian']);
 Route::get("detail/{id}",[ProductController::class,'detail']);
 Route::post("add_to_cart",[ProductController::class,'addToCart']);
 Route::get("cartlist",[ProductController::class,'cartList']);
@@ -64,7 +63,7 @@ Route::prefix("custom")->group(function(){
     Route::get("/result",[CustomProductController::class,'result']);
 });
 
-// Custom
+// Dashboard
 Route::prefix("dashboard")->group(function(){
     Route::get("/",[DashboardController::class,'index']);
     Route::get("/product",[DashboardController::class,'product']);
@@ -75,6 +74,7 @@ Route::prefix("dashboard")->group(function(){
     Route::delete('/product/delete/{id}', [DashboardController::class,'deleteProduct'])->name('product.delete');
 
     Route::get("/order",[DashboardController::class,'order']);
+    Route::get("/custom",[DashboardController::class,'custom']);
 });
 
 

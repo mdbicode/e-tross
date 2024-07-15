@@ -6,7 +6,7 @@
                <div class="row">
                   <div class="col-md-12">
                      <div class="full">
-                        <h3>Product Grid</h3>
+                        <h3>Product {{ $title }}</h3>
                      </div>
                   </div>
                </div>
@@ -29,12 +29,17 @@
                     <div class="box">
                         <div class="option_container">
                             <div class="options">
-                                <a href="" class="option1">
-                                Add to Chart
-                                </a>
-                                <a href="" class="option2">
+                              <form action="/add_to_cart" method="POST">
+                                 @csrf
+                                 <input type="hidden" name="product_id" value="{{$item['id']}}">
+                                 <button style="transition: all .3s; padding: 8px 15px; border-radius: 30px; width: 165px; text-align: center; margin: 5px 0;"  class="option1">
+                                    Add to Cart
+                                  </button>
+                                  
+                             </form>
+                                {{-- <a href="" class="option2">
                                 Buy Now
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                         

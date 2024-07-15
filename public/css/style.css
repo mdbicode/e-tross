@@ -1120,7 +1120,136 @@ form input[type="submit"]:focus {
     font-weight: 400;
 }
 
-http://kute-themes.com/html/boutique/html/index.html
-https://template.hasthemes.com/noraure/noraure/index.html
-https://preview.hasthemes.com/xoss-preview/xoss/index.html
+/* Custom */
 
+.custom-product {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-list {
+  flex: 1;
+}
+
+.product-wrapper {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-wrapper h3 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.product-item:last-child {
+  border-bottom: none;
+}
+
+.product-image {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-right: 20px;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-description {
+  color: gray;
+}
+
+.order-summary {
+  flex-basis: 300px; /* Lebar tetap untuk ringkasan pesanan */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-summary h3 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.order-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #28a745;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+  background-color: #218838;
+}
+
+/* Style untuk gambar agar dapat diklik */
+.item-choice {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+.item-choice input[type="radio"] {
+  display: none; /* Sembunyikan radio button asli */
+}
+.item-choice img {
+  width: 100%; /* Lebar gambar mengisi parent container */
+  height: auto; /* Ketinggian otomatis */
+  display: block; /* Pastikan gambar berada di dalam label */
+}
+.item-choice input[type="radio"]:checked + img {
+  border-color: #007bff; /* Warna border ketika dipilih */
+}
+.item-choice:hover {
+  border-color: #007bff; /* Warna border ketika dihover */
+}
+.item-choice .radio-label {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.item-choice:hover .radio-label {
+  opacity: 1; /* Tampilkan label radio saat dihover */
+}

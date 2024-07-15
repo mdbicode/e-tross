@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CustomProductController extends Controller
@@ -12,6 +13,11 @@ class CustomProductController extends Controller
     }
 
     public function kain()
+    {
+        $products = Product::where('category', 'kain')->get();
+        return view('custom.kain', compact('products'));
+    }
+    public function pakaian()
     {
         return view('custom.kain');
     }
@@ -87,7 +93,6 @@ class CustomProductController extends Controller
     public function result()
     {
         $custom_result = session('custom_data');
-        dd(session('custom_data'));
 
         return view('custom.result', compact('custom_result'));
     }

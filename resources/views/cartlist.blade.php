@@ -1,43 +1,42 @@
 @extends('templates.master')
 @section('content')
-<div class="custom-product">
-
-<div class="col-sm-10">
-
-
-<div class="trending-wrapper">
-  <h3 style="font-family: 'Times New Roman', Times, serif;">Result for Products</h3>  
-  <a href="ordernow" class="btn btn-success order" style="position: fixed;right: 0;">Order Now</a>
-  <br><br>
-  @foreach($products as $items)
-  <div class="row searched-item cart-list-devider">
-  <div class="col-sm-3">
-  <a href="detail/{{$items->id}}">
-    <img src="{{$items->gallery}}" class="trending-image">
-    
-</a>
-  </div>
-  <div class="col-sm-4">
-    <a href="detail/{{$items->id}}">
-      
-      <div class="">
-      <h4 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: black;font-weight: normal;">{{$items->name}}</h4>
-      <h5 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: gray;">{{$items->description}}</h5>
-    </div>
-  </a>
-    </div>
-    <div class="col-sm-4">
-        <a href="/removecart/{{$items->cart_id}}" class="btn btn-warning">Remove From Cart</a>
+<section class="inner_page_head">
+  <div class="container_fuild">
+     <div class="row">
+        <div class="col-md-12">
+           <div class="full">
+              <h3>Keranjang</h3>
+           </div>
         </div>
-  </div><br>
-  @endforeach
-
+     </div>
+  </div>
+</section>
+<section class="product_section layout_padding">
+  <div class="custom-product">
+    <div class="product-list">
+      <div class="product-wrapper">
+        <h3>Result for Products</h3>
+        @foreach($products as $items)
+        <div class="product-item">
+          <img src="{{$items->gallery}}" class="product-image">
+          <div class="product-details">
+            <div class="product-name">{{$items->name}}</div>
+            <div class="product-description">{{$items->description}}</div>
+            <a href="/removecart/{{$items->cart_id}}" class="btn btn-warning">Remove From Cart</a>
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </div>
   
-</div>
-<!-- <a href="odernow" class="btn btn-success">Order Now</a>
-  <br><br><br><br><br><br> -->
+    <div class="order-summary">
+      <h3>Order Summary</h3>
 
+      <div>Total: {{ $total ?? '0' }}</div>
+      <a href="ordernow" class="order-button">Order Now</a>
+    </div>
+  </div>
 </div>
-</div>
+</section>
 
 @endsection

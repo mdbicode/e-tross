@@ -17,17 +17,17 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert([
             [
             'name'=>'Tenun Merah',
-            'price'=>'250.000',
+            'price'=>250000,
             'description'=>'Tenun Ikat Berwarna Merah',
-            'category'=>'Kain',
+            'category'=>'kain',
             'gallery'=>'img/tenun_merah.jpeg',
             'stock' => 25
             ],
             [
             'name'=>'Tenun Biru',
-            'price'=>'250.000',
+            'price'=>250000,
             'description'=>'Tenun Ikat Berwarna Biru',
-            'category'=>'Kain',
+            'category'=>'kain',
             'gallery'=>'img/tenun_biru.jpeg',
             'stock' => 20
             ],

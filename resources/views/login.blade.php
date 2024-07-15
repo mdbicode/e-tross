@@ -1,6 +1,18 @@
 
 @extends('templates.master')
 @section('content')
+<section class="inner_page_head">
+  <div class="container_fuild">
+     <div class="row">
+        <div class="col-md-12">
+           <div class="full">
+              <h3>Login</h3>
+           </div>
+        </div>
+     </div>
+  </div>
+</section>
+<section class="product_section layout_padding">
 <div class="container custom-login">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
@@ -19,4 +31,5 @@
         </div>
     </div>  
 </div>
+</section>
 @endsection
